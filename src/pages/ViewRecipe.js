@@ -1,6 +1,10 @@
 import { useLocation } from "react-router-dom";
 import "../components/viewRecipe.css"
 
+/**
+ * The page to view a recipe detials.
+ * @returns The view recipe page displaying all the recipe's information
+ */
 function ViewRecipe(){
     const {state} = useLocation();
 

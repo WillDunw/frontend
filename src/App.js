@@ -7,6 +7,10 @@ import { Error } from './pages/Error';
 import { AddRecipe } from './pages/AddRecipe';
 import { UpdateRecipe } from './pages/UpdateRecipe';
 
+/**
+ * The app. It determines which page is opened based on which route has been used.
+ * @returns The routes of the app as a html div
+ */
 function App() {
   return (
     <div className="App">

@@ -2,6 +2,10 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./addUpdateRecipe.css";
 
+/**
+ * Responsible for the logic behind the add recipe form.
+ * @returns The form as a html div.
+ *  */
 function AddRecipeForm(){
     const titleRef = useRef(null);
     const instructionsRef = useRef(null);
@@ -36,7 +40,7 @@ const handleSubmit = async (event) => {
         const response = await fetch("http://localhost:1339/recipes", {
             method: "POST",
             body:  JSON.stringify({
-                title: titleRef.current.value,
+                titlegdsa: titleRef.current.value,
                 instructions: instructionsRef.current.value,
                 timeToPrepare: timeRef.current.value,
                 ingredients: ingredientsArray,
@@ -48,7 +52,7 @@ const handleSubmit = async (event) => {
         });
         const result = await response.json();
         if(response.status !== 200){
-            navigate("/", {state : {errorMessage: result.errorMessage}});
+            navigate("/error", {state : {errorMessage: result.errorMessage}});
         }
         else{
             alert(`Recipe ${result.title} successfully posted!`);

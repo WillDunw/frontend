@@ -2,6 +2,11 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./addUpdateRecipe.css";
 
+/**
+ * Creates a form to update a certain recipe
+ * @param {*} recipe The recipe to be updated by the form
+ * @returns The form as a html div
+ */
 function UpdateRecipeForm({recipe}){
     const titleRef = useRef(null);
     const instructionsRef = useRef(null);
@@ -49,7 +54,7 @@ const handleSubmit = async (event) => {
         });
         const result = await response.json();
         if(response.status !== 200){
-            navigate("/", {state : {errorMessage: result.errorMessage}});
+            navigate("/error", {state : {errorMessage: result.errorMessage}});
         }
         else{
             alert(`Recipe ${result.title} successfully changed!`);

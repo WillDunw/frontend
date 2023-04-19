@@ -1,5 +1,9 @@
 import { AddRecipeForm } from "../components/AddRecipeForm";
 
+/**
+ * Creates the page displayed to add a recipe
+ * @returns The page displayed when adding a recipe
+ */
 function AddRecipe(){
 return (
     <>

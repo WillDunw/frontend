@@ -1,7 +1,10 @@
-ul {
-    display: inline-block;
+#ingredients {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    align-items: left;
 }
 
-li {
-    
+#viewRecipe {
+    text-align: center;
 }

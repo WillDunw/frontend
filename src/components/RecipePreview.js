@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./listPreviews.css"
 
+/**
+ * 
+ * @param {*} recipe The recipe to be previewed. 
+ * @returns A preview of the recipe with buttons to allow for the deletion, modification or viewing in detail of the recipe.
+ */
 function RecipePreview({recipe}){
     const navigate = useNavigate();
 

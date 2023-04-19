@@ -1,6 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { UpdateRecipeForm } from "../components/UpdateRecipeForm";
 
+/**
+ * The update recipe page
+ * @returns The page to update a recipe
+ */
 function UpdateRecipe(){
     const {state} = useLocation();
     return (
