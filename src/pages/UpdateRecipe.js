@@ -5,7 +5,7 @@ function UpdateRecipe(){
     const {state} = useLocation();
     return (
         <>
-        <h1>{state.recipe.title}</h1>
+        <h1>Update recipe: {state.recipe.title}</h1>
         <UpdateRecipeForm recipe={state.recipe} />
         </>
     )

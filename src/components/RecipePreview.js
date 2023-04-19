@@ -1,5 +1,5 @@
-import "./style.css";
 import { useNavigate } from "react-router-dom";
+import "./listPreviews.css"
 
 function RecipePreview({recipe}){
     const navigate = useNavigate();
@@ -31,9 +31,9 @@ function RecipePreview({recipe}){
     }
 
     return (
-        <div id={recipe.recipeID}>
-        <p>Title: {recipe.title}</p>
-        <p>Steps: {recipe.instructions}</p>
+        <div class="singlePreview">
+        <p class="titleStyle">{recipe.title}</p>
+        <p class="instructionsStyle">Steps: {recipe.instructions}</p>
         <button type="button" onClick={onDeleteClick}>Delete</button>
         <button type="button" onClick={onUpdateClick}>Update</button>
         <button type="button" onClick={onViewClick}>View Recipe</button>

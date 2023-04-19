@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./addUpdateRecipe.css";
 
 function AddRecipeForm(){
     const titleRef = useRef(null);
@@ -58,27 +59,28 @@ const handleSubmit = async (event) => {
 }
 
     return (
+        <div id="addRecipe">
         <form onSubmit={handleSubmit} id="addRecipeForm">
-            <input type="hidden" id="userIDInput" value="1" ref={userIDRef} name="userID"/>
+            <input type="hidden" class="formElement" id="userIDInput" value="1" ref={userIDRef} name="userID"/>
             
-            <label for="title">Recipe title</label>
-            <input type="text" id="titleInput" required placeholder="Title" ref={titleRef} name="title"/>
+            <label for="title" class="formElement">Recipe title</label>
+            <input type="text" id="titleInput" class="formElement" required placeholder="Title" ref={titleRef} name="title"/>
             
-            <label for="instructions">Instructions</label>
-            <input type="text" id="instructionsInput" placeholder="Instructions" ref={instructionsRef} name="instructions" required/>
+            <label for="instructions" class="formElement">Instructions</label>
+            <input type="text" id="instructionsInput" class="formElement" placeholder="Instructions" ref={instructionsRef} name="instructions" required/>
             
-            <label for="ingredients">Ingredient</label>
-            <input type="text" id="ingredientsInput" placeholder="Ingredient" ref={ingredientsRef} name="ingredients"/>
-            <button type="button" onClick={addIngredient}>Add ingredient</button>
+            <label for="ingredients" class="formElement">Ingredient</label>
+            <input type="text" class="formElement" id="ingredientsInput" placeholder="Ingredient" ref={ingredientsRef} name="ingredients"/>
+            <button type="button" class="formElement" onClick={addIngredient}>Add ingredient</button>
             
-            <label for="time">Approximate time</label>
-            <input type="number" id="timeToPrepareInput" min={1} required placeholder="Minutes to prepare" ref={timeRef} name="time"/>
+            <label for="time" class="formElement">Approximate time</label>
+            <input type="number" class="formElement" id="timeToPrepareInput" min={1} required placeholder="Minutes to prepare" ref={timeRef} name="time"/>
             
-            <label for="cost">Approximate cost</label>
-            <input type="number" id="costInput" min={1} required placeholder="Cost(dollars)" ref={costRef} name="cost"/>
+            <label for="cost" class="formElement">Approximate cost</label>
+            <input type="number" class="formElement" id="costInput" min={1} required placeholder="Cost(dollars)" ref={costRef} name="cost"/>
             
-            <label for="meals">Choose a meal type</label>
-            <select name="meals" id="mealTypesInput" ref={mealTypeRef} required>
+            <label for="meals" class="formElement">Choose a meal type</label>
+            <select name="meals" class="formElement" id="mealTypesInput" ref={mealTypeRef} required>
                 <option value="breakfast">Breakfast</option>
                 <option value="lunch">Lunch</option>
                 <option value="brunch">Brunch</option>
@@ -87,9 +89,10 @@ const handleSubmit = async (event) => {
                 <option value="dessert">Dessert</option>
             </select>
             
-            <button type="submit">Add Recipe</button> 
+            <button type="submit" class="formElement">Add Recipe</button> 
 
         </form>
+        </div>
     )
 }
 

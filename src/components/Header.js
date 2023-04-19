@@ -1,4 +1,5 @@
 import { NavButton } from "./NavButton";
+import "./header.css"
 
 function Header(){
     return (

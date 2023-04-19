@@ -1,0 +1,23 @@
+#previews {
+    background-color: white;
+}
+
+.singlePreview {
+    background-color: lightblue;
+
+    width: 300px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.instructionsStyle {
+    height: 70px;
+    max-height: 50%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line
+}
+
+.titleStyle {
+    font-weight: bold;
+}

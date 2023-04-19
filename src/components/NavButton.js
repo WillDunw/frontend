@@ -1,14 +1,15 @@
 import { useMatch, useResolvedPath } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import "./header.css";
 
 function NavButton(props){
     let resolved =useResolvedPath(props.to);
     let match = useMatch({ path: resolved.pathname, end: true });
 
     const buttonStyle = {
-        backgroundColor: "green",
+        backgroundColor: "lightblue",
         border: "none",
-        color: "white",
+        color: "black",
         textAlign: "center",
         textDecoration: "none",
         display: "inline-block",
@@ -16,9 +17,9 @@ function NavButton(props){
       };
 
       const activeButtonStyle = {
-        backgroundColor: "red",
+        backgroundColor: "beige",
         border: "none",
-        color: "white",
+        color: "black",
         textAlign: "center",
         textDecoration: "none",
         display: "inline-block",
@@ -27,7 +28,7 @@ function NavButton(props){
 
       return (
         <NavLink to={props.to}>
-            <button style={match ? activeButtonStyle: buttonStyle}>
+            <button class="nav-link-button" style={match ? activeButtonStyle: buttonStyle}>
                 <p>{props.label}</p>
             </button>
         </NavLink>

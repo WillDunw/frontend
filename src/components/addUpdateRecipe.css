@@ -1,0 +1,16 @@
+#updateRecipeForm, #addRecipeForm  {
+   margin: auto; 
+   text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+
+}
+
+.formElement {
+    margin-top: 5px;
+}
+
+#submitButton {
+    margin-bottom: 10px;
+}
