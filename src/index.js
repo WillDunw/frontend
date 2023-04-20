@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { Error } from './pages/Error';
 
 /**
  * The base of the site. Gets the app component.
@@ -12,7 +14,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ErrorBoundary fallback={<Error errorMessage={"Unexpected error."} />} >
     <App />
+    </ErrorBoundary>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -6,6 +6,7 @@ import { ViewRecipe } from './pages/ViewRecipe';
 import { Error } from './pages/Error';
 import { AddRecipe } from './pages/AddRecipe';
 import { UpdateRecipe } from './pages/UpdateRecipe';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 /**
  * The app. It determines which page is opened based on which route has been used.
@@ -14,6 +15,7 @@ import { UpdateRecipe } from './pages/UpdateRecipe';
 function App() {
   return (
     <div className="App">
+      <ErrorBoundary fallback={<Error errorMessage={"Unexpected error."} />}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
@@ -24,6 +26,7 @@ function App() {
         <Route path='*' element={<Navigate to="/" />} />
         </Route>
       </Routes>
+      </ErrorBoundary>
     </div>
   );
 }

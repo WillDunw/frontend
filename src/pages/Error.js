@@ -5,12 +5,17 @@ import Alert from "react-bootstrap/Alert";
  * Page displayed when a error has been encountered.
  * @returns An alert to display the error message.
  */
-function Error(){
-    const {state} = useLocation();
+function Error(errorMessage) {
+  const { state } = useLocation();
 
-    return (
+  return (
+    <>
+      {state && state.errorMessage && (
         <Alert variant="danger">{state.errorMessage}</Alert>
-    )
+      )}
+      {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
+    </>
+  );
 }
 
-export {Error};
+export { Error };

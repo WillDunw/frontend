@@ -40,7 +40,7 @@ const handleSubmit = async (event) => {
         const response = await fetch("http://localhost:1339/recipes", {
             method: "POST",
             body:  JSON.stringify({
-                titlegdsa: titleRef.current.value,
+                title: titleRef.current.value,
                 instructions: instructionsRef.current.value,
                 timeToPrepare: timeRef.current.value,
                 ingredients: ingredientsArray,
@@ -51,12 +51,18 @@ const handleSubmit = async (event) => {
             headers: {"Content-type" : "application/json; charset=UTF-8"}
         });
         const result = await response.json();
-        if(response.status !== 200){
-            navigate("/error", {state : {errorMessage: result.errorMessage}});
+        if(response.status === 400){
+            navigate("/error", {state : {errorMessage: "User error. Please try again."}});
         }
-        else{
+        else if(response.status === 500){
+            navigate("/error", {state : {errorMessage: "System error. Please try again later."}});
+        }
+        else if(response.status === 200){
             alert(`Recipe ${result.title} successfully posted!`);
             document.getElementById("addRecipeForm").reset();
+        }
+        else{
+            navigate("/error", {state : {errorMessage: "Unexpected error."}});
         }
         
     }

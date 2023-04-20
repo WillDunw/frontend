@@ -20,8 +20,13 @@ function RecipePreview({recipe}){
                 headers: {"Content-type" : "application/json; charset=UTF-8"}
             });
             let deletedRecipe = await response.json()
-            alert(`Recipe ${deletedRecipe.title} deleted.`);
 
+            if(response.status === 200){
+            alert(`Recipe ${deletedRecipe.title} deleted.`);
+            }
+            else {
+                alert("Error deleting.");
+            }
             // eslint-disable-next-line no-restricted-globals
             location.reload();
         }
